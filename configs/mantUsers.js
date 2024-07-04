@@ -36,8 +36,7 @@ const formularioRegistro = document.getElementById('formulario-registro');
         function verificaRolMi(){
             const rol = localStorage.getItem('rol');
                 if (rol !== 'admin') {
-                    alert("No tienes permiso para acceder a esta página.");
-                    window.location.href = "login.html";
+                    alert("No tienes permiso para acceder a este módulo ya que no eres Admin.");
                 }
                 else if (rol === 'admin') {
                     window.location.href = "mantImagenes.html";
