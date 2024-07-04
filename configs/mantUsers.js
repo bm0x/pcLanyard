@@ -33,8 +33,13 @@ const formularioRegistro = document.getElementById('formulario-registro');
         });
 
         // Verifica si el usuario actual es admin
-        const rol = localStorage.getItem('rol');
-        if (rol !== 'admin') {
-            alert("No tienes permiso para acceder a esta página.");
-            window.location.href = "login.html";
+        function verificaRolMi(){
+            const rol = localStorage.getItem('rol');
+                if (rol !== 'admin') {
+                    alert("No tienes permiso para acceder a esta página.");
+                    window.location.href = "login.html";
+                }
+                else if (rol === 'admin') {
+                    window.location.href = "mantImagenes.html";
+                }
         }
