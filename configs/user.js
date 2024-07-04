@@ -1,9 +1,10 @@
 const saludoElement = document.getElementById('saludoUser');
+const nombreUsuario = localStorage.getItem('usuario');
 const saludoNick = document.getElementById('saludoNick');
 const nickUsuario = localStorage.getItem('nick');
 
 
-if (nickUsuario) {
+if (nombreUsuario) {
   saludoElement.textContent = `Bienvenid@`;
   saludoNick.textContent = `Usuario: ${nickUsuario}`;
 } else {
