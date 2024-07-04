@@ -1,17 +1,28 @@
 {
-    "images": [
-      {
-        "name": "Vitrina_1.jpg",
-        "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_1.jpg"
-      },
-      {
-        "name": "Vitrina_2.png",
-        "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_2.jpg"
-      },
-      {
-        "name": "Vitrina_3.jpg",
-        "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_3.jpg"
-      }
-    ]
-  }
-  
+  "images": [
+    {
+      "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_1.jpg",
+      "alt": "Vitrina 1"
+    },
+    {
+      "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_2.jpg",
+      "alt": "Vitrina 2"
+    },
+    {
+      "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_3.jpg",
+      "alt": "Vitrina 3"
+    },
+    {
+      "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_4.jpg",
+      "alt": "Vitrina 4"
+    },
+    {
+      "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_5.jpg",
+      "alt": "Vitrina 5"
+    },
+    {
+      "url": "https://bm0x.github.io/pcLanyard/imgs/Vitrina_6.jpg",
+      "alt": "Vitrina 6"
+    }
+  ]
+}
