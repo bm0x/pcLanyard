@@ -3,7 +3,7 @@ const saludoNick = document.getElementById('saludoNick');
 const nickUsuario = localStorage.getItem('nick');
 
 
-if (nombreUsuario) {
+if (nickUsuario) {
   saludoElement.textContent = `Bienvenid@`;
   saludoNick.textContent = `Usuario: ${nickUsuario}`;
 } else {
