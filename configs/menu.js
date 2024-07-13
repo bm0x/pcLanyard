@@ -20,6 +20,9 @@ function verificaRolSettings(){
         else if (rol === 'admin') {
             openSettings();
         }
+        else {
+            alert("Aplicación Ajustes no compatible.");
+        }
 }
 
 // Control de Versiones
