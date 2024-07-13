@@ -1,6 +1,6 @@
 const verNum = document.getElementById("verNum");
 
-verNum.textContent = CONFIG.version_number
+verNum.textContent = $(CONFIG.version_number);
 
 function openSettings() {
     if (window.Android) {
