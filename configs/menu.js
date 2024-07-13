@@ -1,13 +1,7 @@
-// Control de Versiones
-
-const version = CONFIG.version_number;
-
-document.getElementById("verNum").innerHTML = version;
-
 // Funciones de apertura de módulos
 
  // Verifica si el usuario actual es admin
-function verificaRolMi(){
+ function verificaRolMi(){
     const rol = localStorage.getItem('rol');
         if (rol !== 'admin') {
             alert("No tienes permiso para acceder a este módulo ya que no tienes rol de Administrador.");
@@ -27,3 +21,9 @@ function verificaRolSettings(){
             openSettings();
         }
 }
+
+// Control de Versiones
+
+const version = CONFIG.version_number;
+
+document.getElementById("verNum").innerHTML = version;

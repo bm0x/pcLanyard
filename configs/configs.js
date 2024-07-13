@@ -1,3 +1,3 @@
 const CONFIG = {
-    version_number: '0.8.35-02'
+    version_number: '0.8.39-01'
 };
