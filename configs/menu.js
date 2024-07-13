@@ -1,5 +1,15 @@
 // Funciones de apertura de módulos
 
+// Función separada de apertura de Ajustes.
+
+function openSettings() {
+    if (window.Android) {
+        window.Android.openSettings();
+    } else {
+        alert("La interfaz Android no está disponible.");
+    }
+}
+
  // Verifica si el usuario actual es admin
  function verificaRolMi(){
     const rol = localStorage.getItem('rol');
@@ -19,9 +29,6 @@ function verificaRolSettings(){
         }
         else if (rol === 'admin') {
             openSettings();
-        }
-        else {
-            alert("Aplicación Ajustes no compatible.");
         }
 }
 
