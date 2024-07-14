@@ -32,6 +32,17 @@ function verificaRolSettings(){
         }
 }
 
+ // Verifica si el usuario actual es admin
+ function verificaRolUpdater(){
+    const rol = localStorage.getItem('rol');
+        if (rol !== 'admin') {
+            alert("No tienes permiso para acceder a este módulo ya que no tienes rol de Administrador.");
+        }
+        else if (rol === 'admin') {
+            window.location.href = "updater.html";
+        }
+}
+
 // Control de Versiones
 
 const version = CONFIG.version_number;
