@@ -15,7 +15,7 @@ if (usuarios.hasOwnProperty(nombreUsuario) && usuarios[nombreUsuario].contraseñ
     localStorage.setItem('usuario', nombreCompleto);
     localStorage.setItem('nick', nombreUsuario);
     localStorage.setItem('rol', usuario.rol);
-    window.location.href = "menu.html";
+    window.location.href = "menu_admin.html";
 } 
 else {
     alert("Usuario o contraseña incorrectos.");
