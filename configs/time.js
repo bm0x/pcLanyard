@@ -1,0 +1,17 @@
+window.onload = reloj();
+
+function reloj() {
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",];
+
+    var fecha = new Date();
+    var dia = fecha.getDate();
+    var mes = meses[fecha.getMonth()];
+    var año = fecha.getFullYear();
+    var hora = fecha.getHours();
+    var minuto = fecha.getMinutes();
+
+    document.getElementById("fecha").innerHTML = dia + " de " + mes + " de " + año;
+    document.getElementById("hora").innerHTML = hora + ":" + minuto;
+
+    setTimeout(reloj, 1000);
+}
