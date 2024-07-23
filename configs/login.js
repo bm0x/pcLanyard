@@ -20,3 +20,7 @@ if (usuarios.hasOwnProperty(nombreUsuario) && usuarios[nombreUsuario].contraseñ
 else {
     alert("Usuario o contraseña incorrectos.");
 }});
+
+function vueltaMenu() {
+    window.location.href = "menu.html";
+}
