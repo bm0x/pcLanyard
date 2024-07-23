@@ -1,10 +1,10 @@
 function updateBatteryStatus(battery) {
     const statusDiv = document.getElementById('bateria');
-    
+
     if (battery.charging === true) {
         statusDiv.innerHTML = `
             <p>Nivel de batería: ${Math.round(battery.level * 100)}%</p>
-            <p>Cargando</p>
+            <p class="grid mx-auto justify-center">Cargando</p>
         `;
     } else {
         statusDiv.innerHTML = `
