@@ -5,20 +5,20 @@ const nickUsuario = localStorage.getItem('nick');
 
 
 if (nombreUsuario) {
-  saludoElement.textContent = `Bienvenid@`;
+  saludoElement.textContent = `Bienvenid@, ${nombreUsuario}`;
   saludoNick.textContent = `Usuario: ${nickUsuario}`;
 } else {
   saludoElement.textContent = `Bienvenido, No has Iniciado Sesión`;
   // Redirigir al login si no hay usuario almacenado
-  alert("Usted no está logueado a la Intranet de pcFactory Lanyard \nPor favor Inicie Sesión.");
-  //Android.showAlert("Usted no está logueado a la Intranet de pcFactory Lanyard \nPor favor Inicie Sesión.");
+  alert("Usted no está logueado a la Intranet de pc Factory Lanyard \nPor favor Inicie Sesión.");
+  //Android.showAlert("Usted no está logueado a la Intranet de pc Factory Lanyard \nPor favor Inicie Sesión.");
   window.location.href = "login.html";
 }
 
 
 function cerrarSesion() {
     localStorage.removeItem('usuario');
-    alert("Has Salido Exitosamente del sistema \nVolverás al login.");
+    alert("Has Salido Exitosamente del sistema \nVolverás al menu principal.");
     //Android.showAlert("Has Salido Exitosamente del sistema \nVolverás al login.");
-    window.location.href = "login.html";
+    window.location.href = "menu.html";
 }
