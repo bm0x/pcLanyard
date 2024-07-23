@@ -1,10 +1,16 @@
 function updateBatteryStatus(battery) {
     const statusDiv = document.getElementById('bateria');
-    statusDiv.innerHTML = `
-        <p>Nivel de batería: ${Math.round(battery.level * 100)}%</p>
-        <p>¿Cargando?: ${battery.charging ? 'Sí' : 'No'}</p>
-        <p>Tiempo restante (si está cargando o descargando): ${battery.dischargingTime ? battery.dischargingTime / 60 + ' minutos' : 'N/A'}</p>
-    `;
+    
+    if (battery.charging === true) {
+        statusDiv.innerHTML = `
+            <p>Nivel de batería: ${Math.round(battery.level * 100)}%</p>
+            <p>Cargando</p>
+        `;
+    } else {
+        statusDiv.innerHTML = `
+            <p>Nivel de batería: ${Math.round(battery.level * 100)}%</p>
+        `;
+    }
 }
 
 if (navigator.getBattery) {
