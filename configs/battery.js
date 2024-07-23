@@ -28,5 +28,5 @@ if (navigator.getBattery) {
         });
     });
 } else {
-    document.getElementById('batteryStatus').innerText = 'La API de estado de batería no está soportada en este navegador.';
+    document.getElementById('bateria').innerText = 'La API de estado de batería no está soportada en este navegador.';
 }
