@@ -14,9 +14,9 @@ function openSettings() {
  function verificaRolMi(){
     const rol = localStorage.getItem('rol');
         if (rol !== 'admin') {
-            alert("No tienes permiso para acceder a este módulo ya que no tienes rol de Administrador.");
+            alert("Ups! \nno puedes acceder porque no eres administrador");
         }
-        else if (rol === 'admin') {
+        else if (rol === 'admin' || rol === 'root') {
             window.location.href = "mantImagenes.html";
         }
 }
@@ -25,9 +25,9 @@ function openSettings() {
 function verificaRolSettings(){
     const rol = localStorage.getItem('rol');
         if (rol !== 'admin') {
-            alert("No tienes permiso para acceder a este módulo ya que no tienes rol de Administrador.");
+            alert("Ups! \nno puedes acceder porque no eres administrador");
         }
-        else if (rol === 'admin') {
+        else if (rol === 'admin' || rol === 'root') {
             openSettings();
         }
 }
@@ -36,10 +36,21 @@ function verificaRolSettings(){
  function verificaRolUpdater(){
     const rol = localStorage.getItem('rol');
         if (rol !== 'admin') {
-            alert("No tienes permiso para acceder a este módulo ya que no tienes rol de Administrador.");
+            alert("Ups! \nno puedes acceder porque no eres administrador");
         }
-        else if (rol === 'admin') {
+        else if (rol === 'admin' || rol === 'root') {
             window.location.href = "updater.html";
+        }
+}
+
+// Verifica si el usuario actual es root
+function verificaRolRoot(){
+    const rol = localStorage.getItem('rol');
+        if (rol !== 'root') {
+            alert("Ups! no eres Superusuario. \nsolo rmendez puede acceder a este módulo.");
+        }
+        else if (rol === 'root') {
+            window.location.href = "menu_apis.html";
         }
 }
 
