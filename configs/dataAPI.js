@@ -21,14 +21,12 @@ function productSearchFunction() {
           document.getElementById('normalPrice').textContent = productInfo['Precio Normal'];
         } else {
           // Manejar el caso de error (por ejemplo, producto no encontrado)
-          //alert('Producto no encontrado.');
-          Android.showAlert("Producto no encontrado!");
+          alert('Producto no encontrado.');
         }
       })
       .catch((error) => {
         console.error(error);
-        //alert('Error al buscar el producto.');
-        Android.showAlert("Error al buscar el producto!");
+        alert('Error al buscar el producto.');
       });
   }
   
