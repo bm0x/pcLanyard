@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     return new Promise((resolve, reject) => {
                         const slide = document.createElement('div');
                         slide.className = 'swiper-slide flex justify-center items-center bg-white';
+                        if (orientation === 'landscape') {
+                            slide.className = 'swiper-slide flex justify-center items-center bg-white mr-[7%]';;
+                        }
                         const img = document.createElement('img');
                         img.src = image.url + '?cache=' + Date.now();
                         img.alt = image.alt;
