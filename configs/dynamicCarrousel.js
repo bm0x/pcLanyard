@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const imagePromises = images.map(image => {
                     return new Promise((resolve, reject) => {
                         const slide = document.createElement('div');
-                        slide.className = 'swiper-slide flex justify-center items-center bg-white';
+                        slide.className = 'swiper-slide flex justify-center items-center mx-auto bg-white';
                         if (orientation === 'landscape') {
-                            slide.className = 'swiper-slide flex justify-center items-center bg-white pr-[15%]';;
+                            slide.className = 'swiper-slide flex justify-center items-center mx-auto bg-white pr-[15%]';;
                         }
                         const img = document.createElement('img');
                         img.src = image.url + '?cache=' + Date.now();
