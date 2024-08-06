@@ -1,7 +1,7 @@
 window.onload = reloj();
 
 function reloj() {
-    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",];
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
     var fecha = new Date();
     var dia = fecha.getDate();
