@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function reloadPage() {
         setTimeout(function() {
             location.reload();
-        }, 5 * 60 * 1000); // 5 minutes in milliseconds
+        }, 3 * 60 * 1000); // 5 minutes in milliseconds
     }
 
     // Initial load of carousel

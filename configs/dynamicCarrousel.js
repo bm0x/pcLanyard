@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function reloadPage() {
         setTimeout(function() {
             location.reload();
-        }, 5 * 60 * 1000);
+        }, 3 * 60 * 1000);
     }
 
     reloadPage();
