@@ -1,14 +1,18 @@
+// Intentar obtener la clave de la API desde localStorage
 let yt_key = localStorage.getItem("yt_key");
 
-if (yt_key === null) {  // Verifica si no hay una API Key almacenada
-    var API_KEY = prompt("No hay Clave Ingresada. \nIngresa tu clave de YouTube");
-    localStorage.setItem("yt_key", API_KEY);
-} else {
-    var API_KEY = yt_key; // Recupera la API Key desde localStorage
-    alert("API Key de YouTube cargada! \nTu clave de YouTube es: " + yt_key);
+if (!yt_key) {  // Si la clave no existe o es nula
+    yt_key = prompt("Ingresa tu clave de YouTube");
+    if (yt_key) {
+        localStorage.setItem("yt_key", yt_key);
+        alert("API Key de YouTube cargada! \nTu clave de YouTube es: " + yt_key);
+    } else {
+        alert("No se ingresó una API Key. No se puede proceder.");
+        throw new Error("API Key es requerida para realizar búsquedas en YouTube.");
+    }
 }
 
-const YOUTUBE_API_KEY = API_KEY; // Usa la API Key recuperada o ingresada
+const YOUTUBE_API_KEY = yt_key;  // Clave de API válida
 const YOUTUBE_API_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 async function buscarVideosEnYouTube(query) {
