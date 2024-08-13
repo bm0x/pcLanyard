@@ -1,4 +1,4 @@
-// Intentar obtener la clave de la API desde localStorage
+// Asegúrate de que la clave de la API esté configurada correctamente
 let yt_key = localStorage.getItem("yt_key");
 
 if (!yt_key) {  // Si la clave no existe o es nula
