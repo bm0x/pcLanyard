@@ -53,11 +53,6 @@ function mostrarVideosConLiteYouTube(videos) {
         contenedor.appendChild(titulo);
         contenedor.appendChild(liteYouTubeElement);
     });
-
-    // Asegúrate de que los elementos se han registrado
-    if (typeof customElements !== 'undefined' && customElements.get('lite-youtube')) {
-        customElements.get('lite-youtube').upgradeCallback();
-    }
 }
 
 async function autocompletar(query) {
