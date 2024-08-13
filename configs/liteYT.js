@@ -19,6 +19,7 @@ async function buscarVideosEnYouTube(query) {
     try {
         const response = await fetch(`${YOUTUBE_API_URL}?key=${YOUTUBE_API_KEY}&part=snippet&q=${query}&type=video&maxResults=5`);
         const data = await response.json();
+        console.log(data); // Verifica la respuesta
 
         const videos = data.items.map(item => ({
             titulo: item.snippet.title,
@@ -39,16 +40,24 @@ function mostrarVideosConLiteYouTube(videos) {
     contenedor.innerHTML = ''; // Limpiar el contenedor
 
     videos.forEach(video => {
+        // Crear el elemento lite-youtube
         const liteYouTubeElement = document.createElement('lite-youtube');
         liteYouTubeElement.setAttribute('videoid', video.videoId);
         liteYouTubeElement.setAttribute('playlabel', video.titulo);
 
+        // Crear el título del video
         const titulo = document.createElement('h3');
         titulo.textContent = video.titulo;
 
+        // Agregar el título y el elemento lite-youtube al contenedor
         contenedor.appendChild(titulo);
         contenedor.appendChild(liteYouTubeElement);
     });
+
+    // Asegúrate de que los elementos se han registrado
+    if (typeof customElements !== 'undefined' && customElements.get('lite-youtube')) {
+        customElements.get('lite-youtube').upgradeCallback();
+    }
 }
 
 async function autocompletar(query) {
