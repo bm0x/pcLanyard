@@ -5,7 +5,7 @@ if (yt_key === null) {  // Verifica si no hay una API Key almacenada
     localStorage.setItem("yt_key", API_KEY);
 } else {
     var API_KEY = yt_key; // Recupera la API Key desde localStorage
-    alert("API Key de YouTube cargada! \nTu clave de YouTube es: " + API_KEY);
+    alert("API Key de YouTube cargada! \nTu clave de YouTube es: " + yt_key);
 }
 
 const YOUTUBE_API_KEY = API_KEY; // Usa la API Key recuperada o ingresada
