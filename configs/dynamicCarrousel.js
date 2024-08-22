@@ -75,11 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', checkOrientation);
     checkOrientation();
 
-    function reloadPage() {
-        setTimeout(function() {
-            location.reload();
-        }, 3 * 60 * 1000);
-    }
+    //function reloadPage() {
+    //    setTimeout(function() {
+    //        location.reload();
+    //    }, 3 * 60 * 1000);
+    //}
+    //reloadPage();
 
-    reloadPage();
+    setTimeout(function() {
+        fetchAndGenerateCarousel(window.matchMedia("(orientation: portrait)").matches ? 'portrait' : 'landscape');
+      }, 5 * 60 * 1000);
 });
