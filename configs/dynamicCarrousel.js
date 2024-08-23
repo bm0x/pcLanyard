@@ -82,8 +82,14 @@ document.addEventListener('DOMContentLoaded', function () {
     //}
     //reloadPage();
 
-    setTimeout(function() {
+    function recargaIslaCarousel() {
         fetchAndGenerateCarousel();
-        console.log("Complemento recargado, no estamos usando location.reload :D")
-      }, 5 * 60 * 1000);
+        console.log("Complemento recargado, no estamos usando location.reload :D");
+    
+        // Volver a ejecutar la función cada 5 minutos
+        setTimeout(refreshCarousel, 5 * 60 * 1000);
+    }
+    
+    // Iniciar el bucle
+    recargaIslaCarousel();
 });
