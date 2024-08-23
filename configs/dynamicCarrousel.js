@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Complemento recargado, no estamos usando location.reload :D");
     
         // Volver a ejecutar la función cada 5 minutos
-        setTimeout(refreshCarousel, 5 * 60 * 1000);
+        setTimeout(recargaIslaCarousel, 5 * 60 * 1000);
     }
     
     // Iniciar el bucle
