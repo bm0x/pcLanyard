@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //reloadPage();
 
     setTimeout(function() {
-        fetchAndGenerateCarousel(window.matchMedia("(orientation: portrait)").matches ? 'portrait' : 'landscape');
+        fetchAndGenerateCarousel();
         console.log("Complemento recargado, no estamos usando location.reload :D")
       }, 5 * 60 * 1000);
 });
