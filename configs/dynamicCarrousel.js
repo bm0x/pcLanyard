@@ -84,6 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(function() {
         fetchAndGenerateCarousel(window.matchMedia("(orientation: portrait)").matches ? 'portrait' : 'landscape');
+        console.log("Complemento recargado, no estamos usando location.reload :D")
       }, 5 * 60 * 1000);
-      console.log("Complemento recargado, no estamos usando location.reload :D")
 });
