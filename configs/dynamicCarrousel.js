@@ -83,7 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
     //reloadPage();
 
     function recargaIslaCarousel() {
-        fetchAndGenerateCarousel();
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        const orientation = isPortrait ? 'portrait' : 'landscape';
+        fetchAndGenerateCarousel(orientation);
         console.log("Complemento recargado, no estamos usando location.reload :D");
     
         // Volver a ejecutar la función cada 5 minutos
