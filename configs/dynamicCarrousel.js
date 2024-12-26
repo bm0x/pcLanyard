@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    let swiperInstance;
+
     // Function to fetch JSON and generate carousel items
     function fetchAndGenerateCarousel(orientation) {
         fetch('https://bm0x.github.io/pcLanyard/dynamicImgs.json')
@@ -15,9 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     return new Promise((resolve, reject) => {
                         const slide = document.createElement('div');
                         slide.className = 'swiper-slide flex justify-center items-center mx-auto';
-                        if (orientation === 'landscape') {
-                            slide.className = 'swiper-slide flex justify-center items-center mx-auto';;
-                        }
                         const img = document.createElement('img');
                         img.src = image.url + '?cache=' + Date.now();
                         img.alt = image.alt;
@@ -52,7 +51,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     });
 
-                    new Swiper('.swiper-container', {
+                    // Destroy the existing Swiper instance if it exists
+                    if (swiperInstance) {
+                        swiperInstance.destroy(true, true);
+                    }
+
+                    // Initialize a new Swiper instance
+                    swiperInstance = new Swiper('.swiper-container', {
                         pagination: {
                             el: '.swiper-pagination',
                         },
@@ -72,26 +77,20 @@ document.addEventListener('DOMContentLoaded', function () {
         fetchAndGenerateCarousel(orientation);
     }
 
+    // Add event listener for orientation change
     window.addEventListener('resize', checkOrientation);
+
+    // Initial check on page load
     checkOrientation();
 
-    //function reloadPage() {
-    //    setTimeout(function() {
-    //        location.reload();
-    //    }, 3 * 60 * 1000);
-    //}
-    //reloadPage();
-
     function recargaIslaCarousel() {
-        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-        const orientation = isPortrait ? 'portrait' : 'landscape';
-        fetchAndGenerateCarousel(orientation);
+        checkOrientation();
         console.log("Complemento recargado, no estamos usando location.reload :D");
-    
+
         // Volver a ejecutar la función cada 5 minutos
         setTimeout(recargaIslaCarousel, 5 * 60 * 1000);
     }
-    
+
     // Iniciar el bucle
     recargaIslaCarousel();
 });
