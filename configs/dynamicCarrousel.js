@@ -60,11 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     swiperInstance = new Swiper('.swiper-container', {
                         pagination: {
                             el: '.swiper-pagination',
+                            clickable: true,
                         },
                         autoplay: {
                             delay: 7000,
                             disableOnInteraction: false,
                         },
+                        loop: true, // Ensure the carousel loops
                     });
                 });
             })
