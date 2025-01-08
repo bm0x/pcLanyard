@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch JSON and generate carousel items
     function fetchAndGenerateCarousel() {
-        fetch('https://bm0x.github.io/pcLanyard/imagenes.json')
+        fetch('https://bm0x.github.io/pcLanyard/imagenes.json', {
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
