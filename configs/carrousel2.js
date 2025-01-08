@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch JSON and generate carousel items
     function fetchAndGenerateCarousel() {
-        fetch('https://bm0x.github.io/pcLanyard/imagenes.json', {
-            headers: {
-                'ngrok-skip-browser-warning': 'true'
-            }
-        })
+        fetch('https://bm0x.github.io/pcLanyard/imagenes.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -38,7 +34,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         preloadImg.src = img.src;
                         preloadImg.onload = function() {
                             // Image exists, load it
-                            img.src = preloadImg.src;
+                            fetch(img.src, {
+                                headers: {
+                                    'ngrok-skip-browser-warning': 'true'
+                                }
+                            })
+                            .then(response => response.blob())
+                            .then(blob => {
+                                img.src = URL.createObjectURL(blob);
+                            });
                         };
                         preloadImg.onerror = function() {
                             // Image does not exist, resolve with null
