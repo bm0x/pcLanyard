@@ -18,36 +18,34 @@ document.addEventListener('DOMContentLoaded', function () {
                         const slide = document.createElement('div');
                         slide.className = 'swiper-slide flex justify-center items-center mx-auto';
                         const img = document.createElement('img');
-                        img.src = image.url + '?cache=' + Date.now();
-                        img.alt = image.alt;
-                        img.className = 'max-w-full max-h-full object-contain';
+                        
+                        // Fetch the image with the required header
+                        fetch(image.url, {
+                            headers: {
+                                'ngrok-skip-browser-warning': 'true'
+                            }
+                        })
+                        .then(response => response.blob())
+                        .then(blob => {
+                            img.src = URL.createObjectURL(blob);
+                            img.alt = image.alt;
+                            img.className = 'max-w-full max-h-full object-contain';
 
-                        img.onload = function() {
-                            slide.classList.add('loaded');
-                            resolve(slide);
-                        };
-                        img.onerror = function() {
+                            img.onload = function() {
+                                slide.classList.add('loaded');
+                                resolve(slide);
+                            };
+                            img.onerror = function() {
+                                console.error('Error loading image:', image.url);
+                                resolve(null);
+                            };
+
+                            slide.appendChild(img);
+                        })
+                        .catch(error => {
+                            console.error('Error fetching image:', error);
                             resolve(null);
-                        };
-
-                        const preloadImg = new Image();
-                        preloadImg.src = img.src;
-                        preloadImg.onload = function() {
-                            fetch(img.src, {
-                                headers: {
-                                    'ngrok-skip-browser-warning': 'true'
-                                }
-                            })
-                            .then(response => response.blob())
-                            .then(blob => {
-                                img.src = URL.createObjectURL(blob);
-                            });
-                        };
-                        preloadImg.onerror = function() {
-                            resolve(null);
-                        };
-
-                        slide.appendChild(img);
+                        });
                     });
                 });
 
