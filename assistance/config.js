@@ -1,4 +1,5 @@
 axios.defaults.withCredentials = true; // Si necesitas enviar cookies o credenciales
+axios.defaults.headers.common['Origin'] = 'https://bmax.tail6edceb.ts.net';
 
 new Vue({
     el: "#app",
