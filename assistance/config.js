@@ -1,3 +1,5 @@
+axios.defaults.withCredentials = true; // Si necesitas enviar cookies o credenciales
+
 new Vue({
     el: "#app",
     data: {
@@ -58,7 +60,7 @@ new Vue({
       async loadUserData() {
         try {
           // Obtener todos los turnos
-          const shiftsResponse = await axios.get(`${this.apiUrl}/api/shifts`);
+          const shiftsResponse = await .get(`${this.apiUrl}/api/shifts`);
           const allShifts = shiftsResponse.data;
 
           // Filtrar turnos por userId
