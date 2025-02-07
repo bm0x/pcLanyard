@@ -61,7 +61,7 @@ new Vue({
       async loadUserData() {
         try {
           // Obtener todos los turnos
-          const shiftsResponse = await .get(`${this.apiUrl}/api/shifts`);
+          const shiftsResponse = await.get(`${this.apiUrl}/api/shifts`);
           const allShifts = shiftsResponse.data;
 
           // Filtrar turnos por userId
